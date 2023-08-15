@@ -1,8 +1,6 @@
-package jogo;
-
 public class Vitoria{
 
-public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual) {
+    public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual) {
         int tamanho = tabuleiro.getTamanho();
         char cor = jogadorAtual.getCor();
 
