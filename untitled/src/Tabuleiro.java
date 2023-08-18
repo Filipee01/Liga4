@@ -12,7 +12,7 @@ public class Tabuleiro {
         }
     }
     public void printTabuleiro() {
-        System.out.print("   ");
+        System.out.print("  ");
         for (int i = 0; i < tamanho; i++) {
             System.out.print(i + "   ");
         }
@@ -21,12 +21,18 @@ public class Tabuleiro {
         for (int i = 0; i < tamanho; i++) {
             System.out.print((char) ('|') + " ");
             for (int j = 0; j < tamanho; j++) {
-                if (celula[i][j] == 'R') {
-                    System.out.print("\u001B[31mO ");
+                if (celula[i][j] == 'X') {
+                    System.out.print("X   ");
                 } else if (celula[i][j] == 'Y') {
-                    System.out.print("\u001B[33mO ");
-                } else {
-                    System.out.print("  ");
+                    System.out.print("Y   ");
+                } else if(celula[i][j] == 0){
+                    System.out.print("    ");
+                }
+                else if(celula[i][j] == 'Z' ) { //peças vencedoras X
+                    System.out.print("(X) ");
+                }
+                else if(celula[i][j] == 'W' ) { //peças vencedoras Y
+                    System.out.print("(Y) ");
                 }
             }
             System.out.println();
@@ -34,36 +40,7 @@ public class Tabuleiro {
         System.out.println("\u001B[0m");
     }
 
-    public boolean jogar(int coluna, Jogador jogador) {
-        if (coluna >= 0 && coluna < tamanho) {
-            for (int i = tamanho - 1; i >= 0; i--) {
-                if (celula[i][coluna] == ' ') {
-                    celula[i][coluna] = jogador.getCor();
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public void inserirPedra(int x, int y, Pedra pedra) {
-        if (x >= 0 && x < tamanho && y >= 0 && y < tamanho) {
-            char cor = pedra.getCor();
-            celula[x][y] = cor;
-        } else {
-            System.out.println("Posição inválida!");
-        }
-    }
-
-    public void setPedra(int x, int y, char cor) {
-        if(cor == 'R') {
-            celula[x][y] = 1;
-        }
-        else if (cor == 'Y') {
-            celula[x][y] = 2;
-        }
-    }
-    public int getTamanho() {
-        return this.tamanho;
+    public int[][] getCelula() {
+        return celula;
     }
 }

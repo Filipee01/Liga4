@@ -1,7 +1,6 @@
 public class Vitoria{
 
-    public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual) {
-        int tamanho = tabuleiro.getTamanho();
+    public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual, int tamanho) {
         char cor = jogadorAtual.getCor();
 
         // Verifica linhas
