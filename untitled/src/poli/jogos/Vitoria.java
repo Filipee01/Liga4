@@ -3,7 +3,7 @@ package poli.jogos;
 import poli.jogos.Jogador;
 import poli.jogos.Tabuleiro;
 
-public class Vitoria{
+public abstract class Vitoria{
 
     public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual, int tamanho) {
         char cor = jogadorAtual.getCor();

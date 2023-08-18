@@ -1,6 +1,7 @@
 import poli.jogos.Jogador;
-import poli.jogos.Jogo;
-import poli.jogos.JogoTurbo;
+import poli.jogos.modos.Jogo;
+import poli.jogos.modos.JogoTurbo;
+import poli.jogos.modos.JogoTurboMaluco;
 
 import java.util.Scanner;
 public class Main {
@@ -21,10 +22,12 @@ public class Main {
         Jogador jogador2 = new Jogador(nomeJogador2, 'Y' );
         Jogo jogo = new Jogo(jogador1, jogador2, tamanhoTabuleiro);
         JogoTurbo jogoTurbo = new JogoTurbo(jogador1, jogador2, tamanhoTabuleiro);
+        JogoTurboMaluco jogoTurboMaluco = new JogoTurboMaluco(jogador1, jogador2, tamanhoTabuleiro);
 
         System.out.println("Informe o modo de jogo: ");
         System.out.println("1 - NORMAL ");
         System.out.println("2 - TURBO ");
+        System.out.println("3 - TURBO MALUCO ");
         int modo = scanner.nextInt();
         scanner.nextLine();
 
@@ -34,6 +37,9 @@ public class Main {
                 break;
             case 2:
                 jogoTurbo.jogar();
+                break;
+            case 3:
+                jogoTurboMaluco.jogar();
                 break;
         }
 

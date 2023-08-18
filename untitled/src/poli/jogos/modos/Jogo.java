@@ -1,8 +1,13 @@
-package poli.jogos;
+package poli.jogos.modos;
+
+import poli.jogos.Jogador;
+import poli.jogos.Tabuleiro;
+import poli.jogos.Vitoria;
+import poli.jogos.modos.Modo;
 
 import java.util.Scanner;
 
-public class Jogo {
+public class Jogo implements Modo {
 
     protected Jogador jogador1;
     protected Jogador jogador2;
