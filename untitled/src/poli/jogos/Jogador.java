@@ -1,3 +1,4 @@
+package poli.jogos;
 
 public class Jogador {
     private String nome;

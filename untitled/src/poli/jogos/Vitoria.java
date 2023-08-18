@@ -1,7 +1,20 @@
+package poli.jogos;
+
+import poli.jogos.Jogador;
+import poli.jogos.Tabuleiro;
+
 public class Vitoria{
 
     public static boolean jogadorVenceu(Tabuleiro tabuleiro, Jogador jogadorAtual, int tamanho) {
         char cor = jogadorAtual.getCor();
+        int highlight;
+        if(cor == 'X'){
+            highlight = 1;
+        } else if (cor == 'Y') {
+            highlight = 2;
+        }else{
+            return false;
+        }
 
         // Verifica linhas
         for (int i = 0; i < tamanho; i++) {
@@ -10,6 +23,9 @@ public class Vitoria{
                 if (tabuleiro.celula[i][j] == cor) {
                     count++;
                     if (count == 4) {
+                        for(int k = j-3; k <= j; k++){
+                            tabuleiro.celula[i][k] = highlight;
+                        }
                         return true;
                     }
                 } else {
@@ -25,6 +41,9 @@ public class Vitoria{
                 if (tabuleiro.celula[i][j] == cor) {
                     count++;
                     if (count == 4) {
+                        for(int k = i-3; k <= i; k++){
+                            tabuleiro.celula[k][j] = highlight;
+                        }
                         return true;
                     }
                 } else {
@@ -44,6 +63,9 @@ public class Vitoria{
                     }
                 }
                 if (venceu) {
+                    for(int k = 0; k < 4; k++){
+                        tabuleiro.celula[i + k][j + k] = highlight;
+                    }
                     return true;
                 }
             }
@@ -60,6 +82,9 @@ public class Vitoria{
                     }
                 }
                 if (venceu) {
+                    for(int k = 0; k < 4; k++){
+                        tabuleiro.celula[i - k][j + k] = highlight;
+                    }
                     return true;
                 }
             }

@@ -1,11 +1,13 @@
+package poli.jogos;
+
 import java.util.Scanner;
 
 public class Jogo {
 
-    private Jogador jogador1;
-    private Jogador jogador2;
-    private int tamanho;
-    private Tabuleiro tabuleiro;
+    protected Jogador jogador1;
+    protected Jogador jogador2;
+    protected int tamanho;
+    protected Tabuleiro tabuleiro;
 
     public Jogo(Jogador jogador1, Jogador jogador2, int tamanho) {
         this.jogador1 = jogador1;
@@ -35,9 +37,11 @@ public class Jogo {
 
                     if (Vitoria.jogadorVenceu(tabuleiro, jogador1, tamanho)) {
                         System.out.println("Parabéns, " + jogador1.getNome() + "! Você venceu!");
+                        tabuleiro.printTabuleiro();
                         jogoFinalizado = true;
                     } else if (jogadas == tamanho * tamanho) {
                         System.out.println("O jogo terminou em empate!");
+                        tabuleiro.printTabuleiro();
                         jogoFinalizado = true;
                     }
                 } else {

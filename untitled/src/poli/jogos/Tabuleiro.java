@@ -1,3 +1,5 @@
+package poli.jogos;
+
 public class Tabuleiro {
     private int tamanho;
     int [][] celula;
@@ -28,10 +30,10 @@ public class Tabuleiro {
                 } else if(celula[i][j] == 0){
                     System.out.print("    ");
                 }
-                else if(celula[i][j] == 'Z' ) { //peças vencedoras X
+                else if(celula[i][j] == 1 ) { //peças vencedoras X
                     System.out.print("(X) ");
                 }
-                else if(celula[i][j] == 'W' ) { //peças vencedoras Y
+                else if(celula[i][j] == 2 ) { //peças vencedoras Y
                     System.out.print("(Y) ");
                 }
             }
