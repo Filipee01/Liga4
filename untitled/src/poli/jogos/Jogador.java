@@ -3,6 +3,7 @@ package poli.jogos;
 public class Jogador {
     private String nome;
     private char cor;
+    private char bola;
 
     public Jogador(String nome, char cor) {
         this.nome = nome;
